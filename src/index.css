@@ -546,6 +546,17 @@ body {
     transform: rotate(360deg);
   }
 }
+.chooseCity-wrapper {
+  display: flex;
+  height: 5rem;
+  width: 5rem;
+  align-self: flex-start;
+}
+.chooseCity-cities {
+  margin-left: 1.5rem;
+  border-radius: 0.75rem;
+  background-image: linear-gradient(0deg,#13588b,#13588b 25%,#073863 65%,#022d50 90%,#022d50);
+}
 
 
 

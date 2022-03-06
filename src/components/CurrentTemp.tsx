@@ -5,9 +5,12 @@ import { ReactComponent as PartlyCloudy } from "../assets/icons/PartlyCloudy.svg
 import { ReactComponent as Rainy } from "../assets/icons/Rainy.svg";
 import { ReactComponent as Snowy } from "../assets/icons/Snowy.svg";
 import { ReactComponent as Sunny } from "../assets/icons/Sunny.svg";
+import { useAppSelector } from "../app/hooks";
+import { selectCity } from "../features/weather/weatherSlice";
 
 const CurrentTemp = memo(() => {
   const { current } = useWeather();
+  const { name } = useAppSelector(selectCity)
 
   const findCurrentWeatherIcon = useCallback(() => {
     if (current?.weather[0].id === 800) return <Sunny />;
@@ -33,7 +36,7 @@ const CurrentTemp = memo(() => {
   return (
     <>
       <div className="currentTemp-wrapper">
-        <div className="currentTemp-cityName">Москва</div>
+        <div className="currentTemp-cityName">{name}</div>
         <div className="currentTemp-temp">{Math.round(current?.temp)}℃</div>
         <div className="currentTemp-icon-wrapper">
           {findCurrentWeatherIcon()}

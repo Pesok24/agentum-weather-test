@@ -1,28 +1,34 @@
-import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState, AppThunk } from '../../app/store';
-import { fetchCount } from '../counter/counterAPI';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RandomObject } from "../../@types/common";
+import { RootState } from "../../app/store";
 
 export interface WeatherState {
-  data: {}
+  data: {};
+  currentCity: RandomObject;
 }
 
 const initialState: WeatherState = {
-  data: {}
+  data: {},
+  currentCity: { name: "Москва", value: "moscow", lat: "55.751244", lon: "37.618423", },
 };
 
-
 export const weatherSlice = createSlice({
-  name: 'weather',
+  name: "weather",
   initialState,
   reducers: {
     setWeatherValue: (state, action: PayloadAction<Object>) => {
-      state.data = action.payload
+      state.data = action.payload;
+    },
+    setCurrentCity: (state, action: PayloadAction<Object>) => {
+      state.currentCity = action.payload;
     },
   },
 });
 
-export const { setWeatherValue } = weatherSlice.actions;
+export const { setWeatherValue, setCurrentCity } = weatherSlice.actions;
 
 export const selectWeather = (state: RootState) => state.weather.data;
+export const selectCity = (state: RootState) => state.weather.currentCity;
+
 
 export default weatherSlice.reducer;
