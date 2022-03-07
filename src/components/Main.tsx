@@ -6,36 +6,37 @@ import ChooseCity from "./ChooseCity";
 import CurrentTemp from "./CurrentTemp";
 import Grafic from "./Grafic";
 import SelectWeatherInfo from "./SelectWeatherInfo";
-const Main =  memo(() => {
+const Main = memo(() => {
   const dispatch = useAppDispatch();
-  
-  const [loading, setLoading] = useState(true)
-  const [grafType, setGrafType] = useState('temp')
-  const { lat, lon } = useAppSelector(selectCity) //получение координат города из редакс
 
+  const [loading, setLoading] = useState(true);
+  const [grafType, setGrafType] = useState("temp");
+  const { lat, lon } = useAppSelector(selectCity); //получение координат города из редакс
 
   useEffect(() => {
-    const fetchData = async () => { // запись в редакс текущей информации о погоде по координатам
-      setLoading(true)
-      dispatch(setWeatherValue( await currentWeatherFetch(lat, lon)));
-      setLoading(false)
-    }
-    fetchData()
+    const fetchData = async () => {
+      // запись в редакс текущей информации о погоде по координатам
+      setLoading(true);
+      dispatch(setWeatherValue(await currentWeatherFetch(lat, lon)));
+      setLoading(false);
+    };
+    fetchData();
   }, [dispatch, lat, lon]);
 
-  const changeGrafType = useCallback((type) => { //смена текущего графика
-    setGrafType(type)    
-  },[])
+  const changeGrafType = useCallback((type) => {
+    //смена текущего графика
+    setGrafType(type);
+  }, []);
 
-  if (loading) return <div className="lds-dual-ring"></div>
+  if (loading) return <div className="lds-dual-ring"></div>;
 
   return (
     <>
       <div className="main-base-wrapper">
         <ChooseCity />
         <CurrentTemp />
-        <SelectWeatherInfo changeType={changeGrafType}/>
-        <Grafic type={grafType}/>
+        <SelectWeatherInfo changeType={changeGrafType} />
+        <Grafic type={grafType} />
       </div>
     </>
   );

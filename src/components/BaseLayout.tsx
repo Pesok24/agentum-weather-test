@@ -1,6 +1,6 @@
 import { memo } from "react";
 import Main from "./Main";
-import '../assets/fonts/Ubuntu/Ubuntu-Regular.ttf'
+import "../assets/fonts/Ubuntu/Ubuntu-Regular.ttf";
 
 const BaseLayout = memo(() => {
   return (

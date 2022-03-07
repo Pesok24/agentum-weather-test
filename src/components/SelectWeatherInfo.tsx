@@ -1,10 +1,11 @@
 import { memo } from "react";
 
 interface SelectWeatherInfoProp {
-  changeType: (arg0: string) => void
+  changeType: (arg0: string) => void;
 }
 
-const SelectWeatherInfo = memo<SelectWeatherInfoProp>(({ changeType }) => { //map кнопок и передача в родительский компонент типа графика, который нужно показывать
+const SelectWeatherInfo = memo<SelectWeatherInfoProp>(({ changeType }) => {
+  //map кнопок и передача в родительский компонент типа графика, который нужно показывать
 
   const weatherButtonsConfig = [
     { name: "Температура", style: "temp", type: "temp" },
@@ -16,7 +17,11 @@ const SelectWeatherInfo = memo<SelectWeatherInfoProp>(({ changeType }) => { //ma
     <>
       <div className="selectWeatherInfo-wrapper">
         {weatherButtonsConfig.map((e) => (
-          <div key={e.type} className={`selectWeatherInfo-block selectWeatherInfo-block-${e.style}`} onClick={() => changeType(e.type)}>
+          <div
+            key={e.type}
+            className={`selectWeatherInfo-block selectWeatherInfo-block-${e.style}`}
+            onClick={() => changeType(e.type)}
+          >
             {e.name}
           </div>
         ))}

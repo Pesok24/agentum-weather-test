@@ -11,7 +11,8 @@ const ChooseCity = memo(() => {
   const dispatch = useAppDispatch();
   const { value } = useAppSelector(selectCity);
 
-  const citiesConfig: citiesConfigType = { //данные о городах и их координатах
+  const citiesConfig: citiesConfigType = {
+    //данные о городах и их координатах
     moscow: {
       name: "Москва",
       value: "moscow",
@@ -32,7 +33,8 @@ const ChooseCity = memo(() => {
     },
   };
 
-  const handleSelect = (ev: React.ChangeEvent<HTMLSelectElement>) => { // записывает выбранный город в редакс
+  const handleSelect = (ev: React.ChangeEvent<HTMLSelectElement>) => {
+    // записывает выбранный город в редакс
     dispatch(setCurrentCity(citiesConfig[ev.target.value]));
   };
 

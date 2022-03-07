@@ -10,9 +10,10 @@ import { selectCity } from "../features/weather/weatherSlice";
 
 const CurrentTemp = memo(() => {
   const { current } = useWeather(); // получение текущей погоды из кастомного хука
-  const { name } = useAppSelector(selectCity)
+  const { name } = useAppSelector(selectCity);
 
-  const findCurrentWeatherIcon = useCallback(() => { // определяет какую иконку показывать
+  const findCurrentWeatherIcon = useCallback(() => {
+    // определяет какую иконку показывать
     if (current?.weather[0].id === 800) return <Sunny />;
     const iconId = current?.weather[0].id.toString().slice(0, 1);
     switch (iconId) {

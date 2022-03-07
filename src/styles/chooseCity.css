@@ -1,9 +1,16 @@
 .chooseCity-wrapper {
-  @apply w-20 h-20 flex self-start
+  @apply w-20 h-20 flex self-start;
 }
 
 .chooseCity-cities {
   @apply rounded-xl ml-6;
-  background-image: linear-gradient(0deg,#13588b,#13588b 25%,#073863 65%,#022d50 90%,#022d50);
+  background-image: linear-gradient(
+    0deg,
+    #13588b,
+    #13588b 25%,
+    #073863 65%,
+    #022d50 90%,
+    #022d50
+  );
   cursor: pointer;
 }

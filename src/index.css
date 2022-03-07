@@ -414,13 +414,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 @font-face {
   font-family: "Ubuntu-Regular";
   src: local("Ubuntu-Regular"),
-   url("../src/assets/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+    url("../src/assets/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
   font-weight: bold;
-  }
+}
 body {
   height: 100vh;
   width: 100vw;
-  background-image: linear-gradient(0deg,#13588b,#13588b 25%,#073863 65%,#022d50 90%,#022d50);
+  background-image: linear-gradient(
+    0deg,
+    #13588b,
+    #13588b 25%,
+    #073863 65%,
+    #022d50 90%,
+    #022d50
+  );
   color: white;
 }
 #root {
@@ -431,24 +438,28 @@ body {
   text-align: center;
 }
 .App.logo {
-        animation: App-logo-spin infinite 20s linear;
-        height: 80px;
-    }
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
 .App-header {
-        background-color: #222;
-        height: 150px;
-        padding: 20px;
-        color: white;
-    }
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
 .App-title {
-        font-size: 1.5em;
-    }
+    font-size: 1.5em;
+  }
 .App-intro {
-        font-size: large; 
-    }
+    font-size: large;
+  }
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .main-base-wrapper {
   display: flex;
@@ -491,12 +502,15 @@ body {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    text-shadow: 1px 0 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0), 0 -1px 0 rgb(0, 0, 0), 0.5px 0.5px rgb(0, 0, 0), -0.5px -0.5px 0 rgb(0, 0, 0), 0.5px -0.5px 0 rgb(0, 0, 0), -0.5px 0.5px 0 rgb(0, 0, 0);
-    transition: outline 0.3s;
+  text-shadow: 1px 0 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 0 1px 0 rgb(0, 0, 0),
+    0 -1px 0 rgb(0, 0, 0), 0.5px 0.5px rgb(0, 0, 0),
+    -0.5px -0.5px 0 rgb(0, 0, 0), 0.5px -0.5px 0 rgb(0, 0, 0),
+    -0.5px 0.5px 0 rgb(0, 0, 0);
+  transition: outline 0.3s;
 }
 .selectWeatherInfo-block:hover {
-      outline: 2px solid white;
-    }
+    outline: 2px solid white;
+  }
 .selectWeatherInfo-block-clouds {
   background-image: url("./assets/images/clouds.jpg");
   background-size: cover;
@@ -555,10 +569,13 @@ body {
 .chooseCity-cities {
   margin-left: 1.5rem;
   border-radius: 0.75rem;
-  background-image: linear-gradient(0deg,#13588b,#13588b 25%,#073863 65%,#022d50 90%,#022d50);
+  background-image: linear-gradient(
+    0deg,
+    #13588b,
+    #13588b 25%,
+    #073863 65%,
+    #022d50 90%,
+    #022d50
+  );
   cursor: pointer;
 }
-
-
-
-

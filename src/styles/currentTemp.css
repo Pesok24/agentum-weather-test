@@ -1,11 +1,11 @@
 .currentTemp-wrapper {
-  @apply flex flex-col items-center
+  @apply flex flex-col items-center;
 }
 
 .currentTemp-cityName {
-  @apply text-4xl
+  @apply text-4xl;
 }
 
 .currentTemp-temp {
-  @apply text-4xl
+  @apply text-4xl;
 }
