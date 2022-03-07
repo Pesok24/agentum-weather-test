@@ -9,7 +9,7 @@ export interface WeatherState {
 
 const initialState: WeatherState = {
   data: {},
-  currentCity: { name: "Москва", value: "moscow", lat: "55.751244", lon: "37.618423", },
+  currentCity: { name: "Москва", value: "moscow", lat: "55.751244", lon: "37.618423", }, // начальный стэйт редакса и дефолтный город
 };
 
 export const weatherSlice = createSlice({
@@ -17,10 +17,10 @@ export const weatherSlice = createSlice({
   initialState,
   reducers: {
     setWeatherValue: (state, action: PayloadAction<Object>) => {
-      state.data = action.payload;
+      state.data = action.payload; // экшон изменения погоды
     },
     setCurrentCity: (state, action: PayloadAction<Object>) => {
-      state.currentCity = action.payload;
+      state.currentCity = action.payload; // экшон изменения города
     },
   },
 });

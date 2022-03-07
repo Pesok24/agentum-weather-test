@@ -1,4 +1,4 @@
-export function timeConverter(UNIX_timestamp: number){
+export function timeConverter(UNIX_timestamp: number){ // функция форматированния времени из unix в человеческое 
   var a = new Date(UNIX_timestamp * 1000);
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var year = a.getFullYear();

@@ -5,7 +5,7 @@ import { timeConverter } from "../features/timeConvert";
 import { selectWeather } from "../features/weather/weatherSlice";
 
 
-export const useWeather = () => {
+export const useWeather = () => { //кастомный хук для получения из редакса информации о погоде и генерации данных для графиков
   const weather: WeatherHook = useAppSelector(selectWeather);
   const { daily, current } = weather ?? {};
 

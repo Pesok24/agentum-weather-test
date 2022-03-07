@@ -8,7 +8,7 @@ interface GraficProp {
 }
 
 
-const Grafic = memo<GraficProp>(({ type }) => {
+const Grafic = memo<GraficProp>(({ type }) => { // сам график, подстраивается под тип информации, которую нужно показать
 
  const { tempGraf, humidityGraf, pressureGraf } = useWeather()
 

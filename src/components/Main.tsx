@@ -11,11 +11,11 @@ const Main =  memo(() => {
   
   const [loading, setLoading] = useState(true)
   const [grafType, setGrafType] = useState('temp')
-  const { lat, lon } = useAppSelector(selectCity)
+  const { lat, lon } = useAppSelector(selectCity) //получение координат города из редакс
 
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async () => { // запись в редакс текущей информации о погоде по координатам
       setLoading(true)
       dispatch(setWeatherValue( await currentWeatherFetch(lat, lon)));
       setLoading(false)
@@ -23,7 +23,7 @@ const Main =  memo(() => {
     fetchData()
   }, [dispatch, lat, lon]);
 
-  const changeGrafType = useCallback((type) => {
+  const changeGrafType = useCallback((type) => { //смена текущего графика
     setGrafType(type)    
   },[])
 
